@@ -1,11 +1,12 @@
 {
-  "homepage": "http://itsevalieu.github.io/",
+  "homepage": "http://itsevalieu.github.io/itsevalieu.github.io",
   "name": "itsevalieu.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
     "react-scripts": "1.1.0"
   },
   "scripts": {
