@@ -1,15 +1,17 @@
 .App {
-  background: #f1d592;
+  /*background: #f1d592;*/
   border: none;
   height: 600px;
   margin: 2.5em 10em 2em 10em;
   padding: none;
   text-align: center;
 }
+/* App-header */
 .App-header {
-  background: #fff;
+  /*background: none;*/
   display: flex;
   flex-direction: row;
+  height: 50px;
   justify-content: flex-start;
   width: 100%;
 }
@@ -27,4 +29,36 @@
 }
 .App-header button:not(:focus) {
   background: #eee;
+}
+
+/* App-body */
+.App-body {
+  background: #f1d592;
+  height: 550px;
+  width: 100%;
+}
+.App-body {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+.App-body:before, .App-body:after {
+  content: "";
+  height: 98%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.App-body:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -3px;
+  top: -8px;
+  transform: rotate(-2.5deg);
+}
+.App-body:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -3px;
+  top: 1px;
+  transform: rotate(1.4deg);
 }
