@@ -1,0 +1,30 @@
+.App {
+  background: #f1d592;
+  border: none;
+  height: 600px;
+  margin: 2.5em 10em 2em 10em;
+  padding: none;
+  text-align: center;
+}
+.App-header {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+.App-header button {
+  background: #f1d592;
+  border-radius: 10px 10px 0px 0px;
+  border: none;
+  height: 50px;
+  margin: 0px 0.5px;
+  width: 125px;
+}
+.App-header button:focus {
+  background: #f1d592; 
+  outline: 0;
+}
+.App-header button:not(:focus) {
+  background: #eee;
+}
