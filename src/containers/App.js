@@ -45,7 +45,7 @@ class App extends Component {
       </div>
     );
   }
-  showAbout(e) {
+  showAbout() {
     console.log("About clicked");
     this.setState({
       aboutClicked: true,
@@ -53,7 +53,7 @@ class App extends Component {
       contactClicked: false
     }); 
   }
-  showPortfolio(e) {
+  showPortfolio() {
     console.log("Portfolio clicked");
     this.setState({
       aboutClicked: false,
@@ -61,7 +61,7 @@ class App extends Component {
       contactClicked: false
     });      
   }
-  showContact(e) {
+  showContact() {
     console.log("Contact clicked"); 
     this.setState({
       aboutClicked: false,

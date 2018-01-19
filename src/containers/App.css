@@ -1,17 +1,17 @@
 .App {
   /*background: #f1d592;*/
   border: none;
-  height: 600px;
-  margin: 2.5em 10em 2em 10em;
+  height: 30em;
+  margin: 2.5em 12em 2em 12em;
   padding: none;
   text-align: center;
 }
+
 /* App-header */
 .App-header {
-  /*background: none;*/
   display: flex;
   flex-direction: row;
-  height: 50px;
+  height: 3em;
   justify-content: flex-start;
   width: 100%;
 }
@@ -19,9 +19,11 @@
   background: #f1d592;
   border-radius: 10px 10px 0px 0px;
   border: none;
-  height: 50px;
+  font-family: "Caveat";
+  font-size: 18px;
+  height: 3em;
   margin: 0px 0.5px;
-  width: 125px;
+  width: 6em;
 }
 .App-header button:focus {
   background: #f1d592; 
@@ -33,13 +35,12 @@
 
 /* App-body */
 .App-body {
+  border: 1px solid #f1d592;
   background: #f1d592;
-  height: 550px;
-  width: 100%;
-}
-.App-body {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  height: 30em;
   position: relative;
+  width: 100%;
 }
 .App-body:before, .App-body:after {
   content: "";
@@ -51,14 +52,47 @@
 .App-body:before {
   background: #fafafa;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  left: -3px;
-  top: -8px;
-  transform: rotate(-2.5deg);
+  left: -8px;
+  top: -5px;
+  transform: rotate(-2deg);
 }
 .App-body:after {
   background: #f6f6f6;
   box-shadow: 0 0 3px rgba(0,0,0,0.2);
-  right: -3px;
+  right: -5px;
   top: 1px;
   transform: rotate(1.4deg);
+}
+
+/*Media Queries*/
+@media screen and (min-width: 1240px){}
+@media screen and (min-width: 945px) and (max-width: 1240px){
+  .App {
+    margin: 2.5em 6em 2em 6em;
+    height: 30em;
+  }
+  .App-body {
+    height: 30em;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 945px){
+  .App {
+    margin: 2.5em 0em 0em 0em;
+    height: 100%;
+  }
+  .App-body {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .App {
+    margin: 2.5em 0em 0em 0em;
+    height: 100%;
+  }
+  .App-body {
+    height: 100%;
+    width: 100%;
+  }
 }

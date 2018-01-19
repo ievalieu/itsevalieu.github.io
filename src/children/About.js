@@ -5,7 +5,16 @@ class About extends Component {
 	render() {
 		return(
 			<div className="about">
-				<p>About Me</p>
+				<div className="about-image">
+					<img src="#"/>
+				</div>
+				<div className="about-biography">
+					<p>Biography</p>
+				</div>
+				<div className="about-info">
+					<p>Skills</p>
+					<p>Experience</p>
+				</div>
 			</div>
 		);
 	}
