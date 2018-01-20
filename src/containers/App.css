@@ -1,14 +1,24 @@
 .App {
   /*background: #f1d592;*/
-  border: none;
-  height: 30em;
-  margin: 2.5em 12em 2em 12em;
+  border: 1px solid red;
+  /*height: 100%;*/
+  width: 70%;
+  /*margin: 2.5em 12em 2em 12em;*/
   padding: none;
   text-align: center;
+  transition: transform 1.5s;
 }
-
+.Folder {
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+}
 /* App-header */
 .App-header {
+  border: 1px solid purple;
   display: flex;
   flex-direction: row;
   height: 3em;
@@ -35,18 +45,19 @@
 
 /* App-body */
 .App-body {
-  border: 1px solid #f1d592;
-  background: #f1d592;
+  /*border: 1px solid #f1d592;*/
+  border: 1px solid blue;
+  /*background: #f1d592;*/
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   height: 30em;
   position: relative;
-  width: 100%;
+  /*width: 100%;*/
 }
 .App-body:before, .App-body:after {
   content: "";
   height: 98%;
   position: absolute;
-  width: 100%;
+  /*width: 100%;*/
   z-index: -1;
 }
 .App-body:before {
@@ -65,7 +76,7 @@
 }
 
 /*Media Queries*/
-@media screen and (min-width: 1240px){}
+/*@media screen and (min-width: 1240px){}
 @media screen and (min-width: 945px) and (max-width: 1240px){
   .App {
     margin: 2.5em 6em 2em 6em;
@@ -95,4 +106,4 @@
     height: 100%;
     width: 100%;
   }
-}
+}*/

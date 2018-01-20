@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 // import { Link } from "react-router-dom";
 import './App.css';
 import About from "../children/About.js";
@@ -16,6 +16,8 @@ class App extends Component {
     this.showAbout = this.showAbout.bind(this);
     this.showPortfolio = this.showPortfolio.bind(this);
     this.showContact = this.showContact.bind(this);
+    this.buttonClick = this.buttonClick.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
   render() {
     const aboutClicked = this.state.aboutClicked;
@@ -31,17 +33,18 @@ class App extends Component {
     } else if (contactClicked) {
       renderThis = <Contact/>;
     }
-
     return (
-      <div className="App">
+      <div className="Folder">
+      <div className="App" id="turn">
         <div className="App-header">
-          <button label="tab" id="about-tab" onClick={ this.showAbout }>ABOUT ME</button>
-          <button label="tab" id="portfolio-tab" onClick={ this.showPortfolio }>PORTFOLIO</button>
-          <button label="tab" id="contact-tab" onClick={ this.showContact }>CONTACT ME</button>
+          <button className="btn" label="tab" id="about-tab" onClick={ this.onClick }>ABOUT ME</button>
+          <button className="btn" label="tab" id="portfolio-tab" onClick={ this.onClick }>PORTFOLIO</button>
+          <button className="btn" label="tab" id="contact-tab" onClick={ this.onClick }>CONTACT ME</button>
         </div>
         <div className="App-body">
           { renderThis }
         </div>
+      </div>
       </div>
     );
   }
@@ -69,6 +72,14 @@ class App extends Component {
       contactClicked: true
     }); 
   } 
+  buttonClick() {
+    console.log("A button was clicked!");
+    document.getElementById("turn").style.transform = "rotate(90deg)";
+  }
+  onClick(e) {
+    this.showAbout();
+    this.buttonClick();
+  }
 }
 
 export default App;

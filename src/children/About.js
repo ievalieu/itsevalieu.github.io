@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from "react";
+import React, { Component } from "react";
 import "./About.css";
 
 class About extends Component {
@@ -6,7 +6,7 @@ class About extends Component {
 		return(
 			<div className="about">
 				<div className="about-image">
-					<img src="#"/>
+					<img src="#" alt="#"/>
 				</div>
 				<div className="about-biography">
 					<p>Biography</p>
