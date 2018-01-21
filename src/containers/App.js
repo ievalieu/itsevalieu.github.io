@@ -83,3 +83,14 @@ class App extends Component {
 }
 
 export default App;
+/*function for animation:
+folder rotate
+  -rotate(90deg)
+folder/page flip/unflip
+  -need booleans (which tab clicked?/page clicked?)
+  -transform-origin: left center
+  -rotateY(-180)
+  -perspective? 1000
+  -translate 2s
+
+*/
