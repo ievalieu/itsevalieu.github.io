@@ -9,6 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      folderClicked: false,
       aboutClicked: false,
       portfolioClicked: false,
       contactClicked: false
