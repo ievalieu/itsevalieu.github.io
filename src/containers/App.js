@@ -21,6 +21,7 @@ class App extends Component {
     this.onClick = this.onClick.bind(this);
   }
   render() {
+    const folderClicked = this.state.folderClicked;
     const aboutClicked = this.state.aboutClicked;
     const portfolioClicked = this.state.portfolioClicked;
     const contactClicked = this.state.contactClicked;
@@ -78,6 +79,8 @@ class App extends Component {
     document.getElementById("turn").style.transform = "rotate(90deg)";
   }
   onClick(e) {
+    //this function isn't doing everything I want it to yet. 
+    //how do I make it responsive? parse a value?
     this.showAbout();
     this.buttonClick();
   }
@@ -93,5 +96,15 @@ folder/page flip/unflip
   -rotateY(-180)
   -perspective? 1000
   -translate 2s
+
+I need a better way to know which tab is clicked. Say I have a value: about, portfolio, contact; if it is clicked, 
+the value is parsed through to a function; which change's the boolean status for all the others?
+
+
+
+
+
+
+
 
 */
