@@ -101,9 +101,20 @@ I need a better way to know which tab is clicked. Say I have a value: about, por
 the value is parsed through to a function; which change's the boolean status for all the others?
 
 
-
-
-
+<body>
+  <div class="folder">
+    <div class="folder-header">
+      <button class="tab" value="about">About</button>
+      <button class="tab" value="portfolio">Portfolio</button>
+      <button class="tab" value="contact">Contact</button>
+    </div>
+    <div class="folder-cover"></div>
+    <div class="page">
+      { render function to display tab content }
+    </div>
+    <div class="folder-back"></div>    
+  </div>
+</body>
 
 
 
