@@ -14,75 +14,31 @@ class App extends Component {
       portfolioClicked: false,
       contactClicked: false
     };
-    this.showAbout = this.showAbout.bind(this);
-    this.showPortfolio = this.showPortfolio.bind(this);
-    this.showContact = this.showContact.bind(this);
-    this.buttonClick = this.buttonClick.bind(this);
-    this.onClick = this.onClick.bind(this);
+    // this.showAbout = this.showAbout.bind(this);
+    // this.showPortfolio = this.showPortfolio.bind(this);
+    // this.showContact = this.showContact.bind(this);
+    // this.buttonClick = this.buttonClick.bind(this);
+    // this.onClick = this.onClick.bind(this);
   }
   render() {
-    const folderClicked = this.state.folderClicked;
-    const aboutClicked = this.state.aboutClicked;
-    const portfolioClicked = this.state.portfolioClicked;
-    const contactClicked = this.state.contactClicked;
-    
-    let renderThis = null;
-    
-    if (aboutClicked) {
-      renderThis = <About/>;
-    } else if (portfolioClicked) {
-      renderThis = <Portfolio/>;
-    } else if (contactClicked) {
-      renderThis = <Contact/>;
-    }
+
     return (
-      <div className="Folder">
-      <div className="App" id="turn">
-        <div className="App-header">
-          <button className="btn" label="tab" id="about-tab" onClick={ this.onClick }>ABOUT ME</button>
-          <button className="btn" label="tab" id="portfolio-tab" onClick={ this.onClick }>PORTFOLIO</button>
-          <button className="btn" label="tab" id="contact-tab" onClick={ this.onClick }>CONTACT ME</button>
+      <div className="folder">
+        <div className="folder-header">
+          <form> {/*buttons should handle onclick to pass state.value to function that renders page content*/}
+            <button name="tab" value="about" onClick={}>About</button>
+            <button name="tab" value="portfolio" onClick={}>Portfolio</button>
+            <button name="tab" value="contact" onClick={}>Contact</button>
+          </form> 
         </div>
-        <div className="App-body">
+        <div className="folder-cover"></div> {/*should have function to click and start animation: rotate.*/}
+        <div className="page">
           { renderThis }
+          {/*function should parse value of buttons; perhaps instead of values, should be using states*/}
         </div>
-      </div>
+        <div className="folder-back"></div>    
       </div>
     );
-  }
-  showAbout() {
-    console.log("About clicked");
-    this.setState({
-      aboutClicked: true,
-      portfolioClicked: false, 
-      contactClicked: false
-    }); 
-  }
-  showPortfolio() {
-    console.log("Portfolio clicked");
-    this.setState({
-      aboutClicked: false,
-      portfolioClicked: true, 
-      contactClicked: false
-    });      
-  }
-  showContact() {
-    console.log("Contact clicked"); 
-    this.setState({
-      aboutClicked: false,
-      portfolioClicked: false, 
-      contactClicked: true
-    }); 
-  } 
-  buttonClick() {
-    console.log("A button was clicked!");
-    document.getElementById("turn").style.transform = "rotate(90deg)";
-  }
-  onClick(e) {
-    //this function isn't doing everything I want it to yet. 
-    //how do I make it responsive? parse a value?
-    this.showAbout();
-    this.buttonClick();
   }
 }
 
@@ -99,23 +55,71 @@ folder/page flip/unflip
 
 I need a better way to know which tab is clicked. Say I have a value: about, portfolio, contact; if it is clicked, 
 the value is parsed through to a function; which change's the boolean status for all the others?
-
-
-<body>
-  <div class="folder">
-    <div class="folder-header">
-      <button class="tab" value="about">About</button>
-      <button class="tab" value="portfolio">Portfolio</button>
-      <button class="tab" value="contact">Contact</button>
+    // const folderClicked = this.state.folderClicked;
+    // const aboutClicked = this.state.aboutClicked;
+    // const portfolioClicked = this.state.portfolioClicked;
+    // const contactClicked = this.state.contactClicked;
+    
+    // let renderThis = null;
+    
+    // if (aboutClicked) {
+    //   renderThis = <About/>;
+    // } else if (portfolioClicked) {
+    //   renderThis = <Portfolio/>;
+    // } else if (contactClicked) {
+    //   renderThis = <Contact/>;
+    // }
+ <div className="Folder">
+  <div className="App" id="turn">
+    <div className="App-header">
+      <button className="btn" label="tab" id="about-tab" onClick={ this.onClick }>ABOUT ME</button>
+      <button className="btn" label="tab" id="portfolio-tab" onClick={ this.onClick }>PORTFOLIO</button>
+      <button className="btn" label="tab" id="contact-tab" onClick={ this.onClick }>CONTACT ME</button>
     </div>
-    <div class="folder-cover"></div>
-    <div class="page">
-      { render function to display tab content }
+    <div className="App-body">
+      { renderThis }
     </div>
-    <div class="folder-back"></div>    
   </div>
-</body>
+</div>
 
-
+ showAbout(e) {
+    e.preventDefault();
+    console.log("About clicked");
+    this.setState({
+      aboutClicked: true,
+      portfolioClicked: false, 
+      contactClicked: false
+    }); 
+  }
+  showPortfolio(e) {
+    e.preventDefault();    
+    console.log("Portfolio clicked");
+    this.setState({
+      aboutClicked: false,
+      portfolioClicked: true, 
+      contactClicked: false
+    });      
+  }
+  showContact(e) {
+    e.preventDefault();
+    console.log("Contact clicked"); 
+    this.setState({
+      aboutClicked: false,
+      portfolioClicked: false, 
+      contactClicked: true
+    }); 
+  } 
+  buttonClick() {
+    console.log("A button was clicked!");
+    document.getElementById("turn").style.transform = "rotate(90deg)";
+  }
+  onClick(e) {
+    e.preventDefault();
+    //this function isn't doing everything I want it to yet. 
+    //how do I make it responsive? parse a value?
+    this.showAbout();
+    this.buttonClick();
+  }
+//classes that should have flipping? page; tabs; cover; 
 
 */
