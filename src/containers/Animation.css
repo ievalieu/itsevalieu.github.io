@@ -1,0 +1,28 @@
+.rotateFolder {
+	transform: rotate(90deg);
+	transition: transform 1.5s;
+}
+.scaleFolder {
+	transform: scale(.80);
+}
+.folder-pages:before, .folder-pages:after {
+  content: "";
+  height: 98%;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+}
+.folder-pages:before {
+  background: #fafafa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  left: -8px;
+  top: -5px;
+  transform: rotate(-2deg);
+}
+.folder-pages:after {
+  background: #f6f6f6;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  right: -5px;
+  top: 1px;
+  transform: rotate(1.4deg);
+}

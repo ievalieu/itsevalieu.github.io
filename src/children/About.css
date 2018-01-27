@@ -10,6 +10,10 @@
  	width: 40%;
 	border: 1px solid red;
 }
+.about img {
+	height: 200px;
+	width: auto;
+}
 .about-biography {
 	width: 59%;
 	border: 1px solid red;

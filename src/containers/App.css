@@ -1,31 +1,21 @@
-.App {
-  /*background: #f1d592;*/
-  border: 1px solid red;
-  /*height: 100%;*/
-  width: 70%;
-  /*margin: 2.5em 12em 2em 12em;*/
-  padding: none;
-  text-align: center;
-  transition: transform 1.5s;
-}
-.Folder {
+.folder {
   border: 1px solid green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: 100vh;
+  margin: 10% 10%;
+  text-align: center;
 }
-/* App-header */
-.App-header {
+
+/* ----- Folder Header -----*/
+.folder-header {
   border: 1px solid purple;
   display: flex;
   flex-direction: row;
   height: 3em;
   justify-content: flex-start;
+  position: relative;
   width: 100%;
+  z-index: 0;
 }
-.App-header button {
+.folder-header button {
   background: #f1d592;
   border-radius: 10px 10px 0px 0px;
   border: none;
@@ -35,44 +25,41 @@
   margin: 0px 0.5px;
   width: 6em;
 }
-.App-header button:focus {
+.folder-header button:focus {
   background: #f1d592; 
   outline: 0;
 }
-.App-header button:not(:focus) {
+.folder-header button:not(:focus) {
   background: #eee;
 }
 
-/* App-body */
-.App-body {
-  /*border: 1px solid #f1d592;*/
-  border: 1px solid blue;
-  /*background: #f1d592;*/
+/* ----- Folder Cover/Back -----*/
+.folder-cover, .folder-back {
+  background: #f1d592;
+  border: 1px solid #f1d592;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  height: 30em;
-  position: relative;
-  /*width: 100%;*/
-}
-.App-body:before, .App-body:after {
-  content: "";
-  height: 98%;
+  height: 600px;
   position: absolute;
-  /*width: 100%;*/
-  z-index: -1;
+  width: 100%;
 }
-.App-body:before {
-  background: #fafafa;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  left: -8px;
-  top: -5px;
-  transform: rotate(-2deg);
+
+/* ----- Folder Pages -----*/
+.folder-pages {
+  background: blue;
+  height: 600px;
+  position: absolute;
+  width: 100%;
 }
-.App-body:after {
-  background: #f6f6f6;
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
-  right: -5px;
-  top: 1px;
-  transform: rotate(1.4deg);
+
+/* ----- Folder Z-indexes -----*/
+.folder-cover {
+  z-index: 2;
+}
+.folder-pages {
+  z-index: 1;
+}
+.folder-back {
+  z-index: 0;
 }
 
 /*Media Queries*/

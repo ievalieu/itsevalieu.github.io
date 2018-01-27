@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from "react-router-dom";
 import './App.css';
+import "./Animation.css";
 import About from "../children/About.js";
 import Portfolio from "../children/Portfolio.js";
 import Contact from "../children/Contact.js";
@@ -9,7 +10,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      folderClicked: false,
       aboutClicked: false,
       portfolioClicked: false,
       contactClicked: false
@@ -21,7 +21,6 @@ class App extends Component {
     this.onClick = this.onClick.bind(this);
   }
   render() {
-    const folderClicked = this.state.folderClicked;
     const aboutClicked = this.state.aboutClicked;
     const portfolioClicked = this.state.portfolioClicked;
     const contactClicked = this.state.contactClicked;
@@ -36,17 +35,17 @@ class App extends Component {
       renderThis = <Contact/>;
     }
     return (
-      <div className="Folder">
-      <div className="App" id="turn">
-        <div className="App-header">
-          <button className="btn" label="tab" id="about-tab" onClick={ this.onClick }>ABOUT ME</button>
-          <button className="btn" label="tab" id="portfolio-tab" onClick={ this.onClick }>PORTFOLIO</button>
-          <button className="btn" label="tab" id="contact-tab" onClick={ this.onClick }>CONTACT ME</button>
+      <div className="folder" id="scale">
+        <div className="folder-header">
+          <button id="about-tab" onClick={ this.onClick }>ABOUT ME</button>
+          <button id="portfolio-tab" onClick={ this.onClick }>PORTFOLIO</button>
+          <button id="contact-tab" onClick={ this.onClick }>CONTACT ME</button>
         </div>
-        <div className="App-body">
+        <div className="folder-cover" id="rotate"></div>
+        <div className="folder-pages">
           { renderThis }
         </div>
-      </div>
+        <div className="folder-back"></div>
       </div>
     );
   }
@@ -76,7 +75,10 @@ class App extends Component {
   } 
   buttonClick() {
     console.log("A button was clicked!");
-    document.getElementById("turn").style.transform = "rotate(90deg)";
+    const folderRotate = document.getElementById("rotate");
+    folderRotate.classList.add("rotateFolder");
+    const folderScale = document.getElementById("scale");
+    folderScale.classList.add("scaleFolder");
   }
   onClick(e) {
     //this function isn't doing everything I want it to yet. 
