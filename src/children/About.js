@@ -17,6 +17,7 @@ class About extends Component {
 				<div className="about-info">
 					<p>Skills: HTML3, CSS3, Javascript, Node.js, Express, React, MySQL, MongoDB, Python, APIs</p>
 					<p>Experience: Sueya, Bird Pick Tea & Herb, Teafographic</p>
+					<a href="#">Resume</a>
 				</div>
 			</div>
 		);
