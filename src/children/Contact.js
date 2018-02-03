@@ -3,40 +3,43 @@ import "./Contact.css";
 
 class Contact extends Component {
 	constructor(props) {
-		super(props);
+		super();
 		this.state = {
 			name: "",
 			email: "",
 			subject: "",
 			body: ""
 		};
-		this.handleTab = this.handleTab.bind(this);
+		this.handleChange = this.handleChange.bind(this);
    	 	this.handleSubmit = this.handleSubmit.bind(this);
 	}
-
 	handleChange(e) {
-    	this.setState = {
-     		name: e.target.value,
-     		email: e.target.value,
-     		subject: e.target.value,
-     		body: e.target.value
-    	};
+    	this.setState({
+     		[e.target.name]: e.target.value
+    	});
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log(this.state.tabClicked);
+		console.log(this.state);
+		this.setState({
+			name: "",
+			email: "",
+			subject: "",
+			body: ""
+		});
 	}
 
 	render() {
 		return(
 			<div className="contact">
 				<p>Contact Me</p>
-				<form onSubmit={ this.handleSubmit }>
-					<input type="text" placeholder="Full Name" value={this.state.name} onChange={this.handleChange}></input>
-					<input type="text" placeholder="Email Address"  value={this.state.email} onChange={this.handleChange}></input>
-					<input type="text" placeholder="Subject Line"  value={this.state.subject} onChange={this.handleChange}></input>
-					<textarea type="text" placeholder="Message"  value={this.state.body} onChange={this.handleChange}></textarea>
+				<form onSubmit={this.handleSubmit}>
+					<input type="text" placeholder="Full Name" name="name" value={this.state.name} onChange={this.handleChange}></input>
+					<input type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={this.handleChange}></input>
+					<input type="text" placeholder="Subject Line" name="subject" value={this.state.subject} onChange={this.handleChange}></input>
+					<textarea type="text" placeholder="Message" name="body" value={this.state.body} onChange={this.handleChange}></textarea>
+					<button type="submit">Submit</button>
 				</form>
 			</div>
 		);
