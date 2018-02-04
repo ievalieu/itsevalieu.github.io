@@ -6,6 +6,12 @@ class Portfolio extends Component {
 		return(
 			<div className="portfolio">
 				<p>Portfolio</p>
+				<ul>
+					<li>Twitter Sentiment Bot</li>
+					<li>Drink Generator</li>
+					<li>NYT API</li>
+					<li>teafographic</li>
+				</ul>
 			</div>
 		);
 	}
