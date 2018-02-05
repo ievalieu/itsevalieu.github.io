@@ -1,14 +1,22 @@
 .about {
 	/*background: #fafafa;*/
-	border: none;
-	display: flex;
-	flex-flow: row wrap;
+	border: 1px solid red;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 30% auto;
+	grid-template-areas: 
+		"image text"
+		"text text"
+		"text text";
+	grid-column-gap: 10px;
+	grid-row-gap: 50px;
 	height: 100%;
 	width: 90%;
 }
 .about-image {
  	width: 40%;
 	border: 1px solid red;
+	grid-column: 1 / 2;
 }
 .about img {
 	height: 200px;
@@ -17,7 +25,9 @@
 .about-biography {
 	width: 59%;
 	border: 1px solid red;
+	grid-column: 2 / 3;
 }
 .about-info {
 	width: 100%;
+	grid-row: 2 / 3;
 }

@@ -83,7 +83,7 @@ class App extends Component {
   onClick(e) {
     //this function isn't doing everything I want it to yet. 
     //how do I make it responsive? parse a value?
-    this.showContact();
+    this.showAbout();
     this.buttonClick();
   }
 }
